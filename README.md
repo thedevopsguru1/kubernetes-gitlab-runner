@@ -91,9 +91,10 @@ unregisterRunners: true
 After you have edited the values.yaml file to replicate what is above, deploy the chart to the cluster:
 
 Deploy the gitlab-runner to the Cluster Expand source
-Troubleshooting:
+## Troubleshooting:
 
- What to do when gitlab runners are not using the correct service account
+### What to do when gitlab runners are not using the correct service account
+ 
 If you see an error such as: `Error: UPGRADE FAILED: query: failed to query with labels: secrets is forbidden: User "system:serviceaccount:darknet-tooling:default" cannot list resource "secrets" in API group "" in the namespace "darknet-prod"`, add the following to you values.yaml file:
 
 Update values.yaml to use the proper service account Expand source
