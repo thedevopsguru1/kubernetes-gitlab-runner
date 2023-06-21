@@ -7,15 +7,15 @@
 ## Download the gitlab-runner helm chart. Use the values.yaml file provided from there for this document.
 
 
-### The cluster doesn't allow creating ClusterRoles so we have to rely on the built-in admin Role. The Gitlab runner chart's rbac support is all or nothing so we can't specify the Role to use with a generated Service Account. That means we have to:
+#### The cluster doesn't allow creating ClusterRoles so we have to rely on the built-in admin Role. The Gitlab runner chart's rbac support is all or nothing so we can't specify the Role to use with a generated Service Account. That means we have to:
 
-### Disable the gitlab runner chart's Service Account creation and specify one of our own
-### Create said Service Account in the ${PROJECT}-tooling Namespace
-### Bind the ServiceAccount to the admin ClusterRole in each namespace the runner will deploy to
-### To separate resource quotas, we typically create 3 Namespaces per project:
-### ${PROJECT}-tooling which holds all the gitlab runner containers
-### ${PROJECT}-review which holds all the Review Apps deployments
-### ${PROJECT} which holds the "production" or stable release from master branch. This namespace is usually on the production cluster with it's own runner in the ${PROJECT}-tooling namespace
+#### Disable the gitlab runner chart's Service Account creation and specify one of our own
+#### Create said Service Account in the ${PROJECT}-tooling Namespace
+#### Bind the ServiceAccount to the admin ClusterRole in each namespace the runner will deploy to
+#### To separate resource quotas, we typically create 3 Namespaces per project:
+#### ${PROJECT}-tooling which holds all the gitlab runner containers
+#### ${PROJECT}-review which holds all the Review Apps deployments
+#### ${PROJECT} which holds the "production" or stable release from master branch. This namespace is usually on the production cluster with it's own runner in the ${PROJECT}-tooling namespace
 ## Using Foo as an example project name, the commands would look like this:
 ```
 kubectl create serviceaccount gitlab-runner --namespace ${PROJECT}-tooling
