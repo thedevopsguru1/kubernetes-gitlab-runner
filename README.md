@@ -22,7 +22,7 @@ kubectl create serviceaccount gitlab-runner --namespace ${PROJECT}-tooling
 ```
 ```
 kubectl create rolebinding gitlab-runner:admin --clusterrole=admin --serviceaccount=${PROJECT}-tooling:gitlab-runner --namespace ${PROJECT}-tooling
-``
+```
 ```
 kubectl create rolebinding gitlab-runner:admin --clusterrole=admin --serviceaccount=${PROJECT}-tooling:gitlab-runner --namespace ${PROJECT}-review
 ```
@@ -39,7 +39,6 @@ spec:
   resources:
     requests:
       storage: 100Gi
-
 ```
 To find the gitlab-runner registration token:
 
