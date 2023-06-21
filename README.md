@@ -1,4 +1,5 @@
 # kubernetes-gitlab-runner
+https://gitlab.com/gitlab-org/charts/gitlab-runner
 ## Prerequisites:
 ####  gitlab-runner helm chart
 #### access to the cluster and namespace
