@@ -87,7 +87,7 @@ runners:
           name = '{{ include "gitlab-runner.fullname" . }}-cache'
           mount_path = "/tmp/gitlab/cache"
   serviceAccountName: gitlab-runner
-  tags: mariner
+  tags: puttaghere
 unregisterRunners: true
 ```
 After you have edited the values.yaml file to replicate what is above, deploy the chart to the cluster:
