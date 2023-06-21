@@ -1,7 +1,7 @@
 # kubernetes-gitlab-runner
 ## Prerequisites:
-### gitlab-runner helm chart
-### access to the cluster and namespace
+ gitlab-runner helm chart
+ access to the cluster and namespace
 
 
 ## Download the gitlab-runner helm chart. Use the values.yaml file provided from there for this document.
